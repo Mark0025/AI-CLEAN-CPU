@@ -1,0 +1,31 @@
+directory_cleanup/
+├── __init__.py
+├── main.py
+├── core/
+│   ├── __init__.py
+│   ├── analyzer.py
+│   └── constants.py
+├── utils/
+│   ├── __init__.py
+│   ├── ai_safety.py
+│   ├── ai_navigator.py
+│   ├── logging_utils.py
+│   ├── progress.py
+│   └── cache_manager.py
+├── strategies/
+│   ├── __init__.py
+│   ├── base.py
+│   ├── move_strategy.py
+│   └── delete_strategy.py
+├── logs/
+│   ├── ai_interactions/
+│   ├── operations/
+│   └── errors/
+├── cache/
+│   ├── ai_responses/
+│   └── directory_stats/
+└── tests/
+    ├── __init__.py
+    ├── test_analyzer.py
+    ├── test_strategies.py
+    └── test_ai_safety.py 

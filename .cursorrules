@@ -1,0 +1,9 @@
+-DONT EVER WRITE THIS IN MY CODE {
+    "rest of your existing analyze_directories code ..."
+}
+
+BE PYTHONIC
+
+CREATE A LOG FILE AND LOG ALL ERRORS AND STATUS UPDATES TO IT-
+
+-If we need to modulaize code do so but allways create a log file of changes you made so if when you modualize my code and you break it you can go back and see what you did or force us to use git to revert it. 

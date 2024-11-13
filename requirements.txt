@@ -1,0 +1,7 @@
+colorama
+python-dotenv
+pathlib
+tqdm
+send2trash
+pytest
+pytest-cov
