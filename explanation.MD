@@ -1,135 +1,81 @@
-# Directory Cleanup Application with AI Integration
+# AI-CLEAN-CPU: Technical Documentation
 
-## Enhanced Architecture Overview
+## Architecture Overview
 
 ### Core Components
+1. **Chat Interface** (`core/chat_interface.py`)
+   - Handles natural language processing
+   - Interprets user commands
+   - Provides interactive feedback
 
-1. **AI Integration**
-   - Interactive directory navigation
-   - Safety validation
-   - Contextual recommendations
-   - Response caching for performance
+2. **Analyzer** (`core/analyzer.py`)
+   - Analyzes file systems
+   - Identifies patterns and issues
+   - Generates recommendations
 
-2. **Caching System**
-   - AI response caching
-   - Directory statistics caching
-   - Configurable cache expiration
-   - Automatic cache cleanup
+3. **Strategies** (`strategies/`)
+   - Base Strategy (`strategies/base.py`)
+   - Delete Strategy (`strategies/delete_strategy.py`)
+   - Move Strategy (`strategies/move_strategy.py`)
 
-3. **Enhanced Logging**
-   - Structured log organization
-   - AI interaction logging
-   - Operation tracking
-   - Error monitoring
+### Utility Modules
+- **AI Navigator** (`utils/ai_navigator.py`): AI-powered decision making
+- **Cache Manager** (`utils/cache_manager.py`): Caching system
+- **Enhanced Logging** (`utils/enhanced_logging.py`): Advanced logging
+- **Progress Tracking** (`utils/progress.py`): Operation progress monitoring
 
-### Directory Structure
+## Safety Features
+1. **Rollback Capability**
+   - All operations are tracked
+   - Changes can be undone
+   - Transaction-like operations
 
-The application uses a well-organized directory structure:
-
-```
-directory_cleanup/
-├── core/           # Core functionality
-├── utils/          # Utility modules
-├── strategies/     # Cleanup strategies
-├── logs/           # Structured logs
-├── cache/          # Cache storage
-└── tests/          # Test suite
-```
-
-### Caching Strategy
-
-1. **AI Response Caching**
-   - Cache frequently used AI responses
-   - Reduce API calls
-   - Improve response time
-   - Configurable expiration
-
-2. **Directory Analysis Cache**
-   - Cache directory statistics
-   - Speed up repeated operations
-   - Reduce system load
-   - Auto-invalidation on changes
-
-### Logging Strategy
-
-1. **AI Interactions**
-   - Record all AI conversations
-   - Track safety recommendations
-   - Monitor decision patterns
-   - Audit trail for operations
-
-2. **Operation Logs**
-   - Detailed operation tracking
-   - Performance metrics
-   - Error tracking
-   - Success/failure statistics
-
-### Testing Strategy
-
-1. **Unit Tests**
-   - Core functionality testing
-   - Strategy implementation tests
-   - AI safety validation tests
-   - Cache management tests
-
-2. **Integration Tests**
-   - End-to-end workflow tests
-   - AI interaction tests
-   - Error handling tests
-   - Performance benchmarks
-
-### Performance Considerations
-
-1. **Caching Benefits**
-   - Reduced API costs
-   - Faster response times
-   - Lower system load
-   - Improved user experience
-
-2. **Cache Management**
-   - Automatic expiration
-   - Size monitoring
-   - Cleanup routines
-   - Cache invalidation
-
-### Safety Features
-
-1. **AI-Powered Safety**
-   - Context-aware validation
-   - Historical decision learning
+2. **AI Safety Checks**
+   - Multiple validation layers
    - Risk assessment
-   - User guidance
+   - Operation confirmation
 
-2. **Operation Validation**
-   - Multi-layer checks
-   - Permission validation
-   - System impact assessment
-   - Rollback capabilities
-
-### Future Enhancements
-
-1. **Machine Learning Integration**
-   - Pattern recognition
-   - Automated decision making
-   - Risk prediction
-   - Performance optimization
-
-2. **Advanced Caching**
-   - Distributed caching
-   - Predictive caching
-   - Cache synchronization
-   - Memory optimization
-
-### Best Practices
-
-1. **Cache Management**
-   - Regular cache cleanup
-   - Size monitoring
-   - Performance tracking
-   - Cache hit/miss analysis
-
-2. **Logging**
-   - Structured log format
-   - Regular log rotation
-   - Error aggregation
+3. **Logging and Monitoring**
+   - Detailed operation logs
+   - Error tracking
    - Performance metrics
+
+## Configuration
+The application uses environment variables for configuration:
+- Development vs Production modes
+- Logging levels
+- Safety features
+- AI model settings
+
+## Testing
+Comprehensive test suite covering:
+- Unit tests
+- Integration tests
+- Safety tests
+- Performance tests
+
+## Best Practices
+1. **File Operations**
+   - Always backup before modifications
+   - Verify file permissions
+   - Check available disk space
+
+2. **Error Handling**
+   - Graceful error recovery
+   - User-friendly error messages
+   - Detailed error logging
+
+3. **Performance**
+   - Efficient file scanning
+   - Caching frequently accessed data
+   - Batch operations when possible
+
+## Future Enhancements
+1. Additional cleanup strategies
+2. Enhanced AI capabilities
+3. GUI interface
+4. Cloud integration
+5. Multi-language support
+
+## Contributing
+See README.md for contribution guidelines and setup instructions.
