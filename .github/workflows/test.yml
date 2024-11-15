@@ -1,0 +1,61 @@
+name: CI Tests
+
+on:
+  push:
+    branches: 
+      - main
+      - feature/*
+      - develop
+  pull_request:
+    branches: 
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.12']  # We're using Python 3.12 in our project
+    
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Fetch all history for all branches and tags
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Create required directories
+      run: |
+        mkdir -p test_logs
+        mkdir -p backups
+    
+    - name: Run tests
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        APP_DEBUG: 'true'
+      run: python run_tests.py
+    
+    - name: Upload test logs
+      if: always()  # Upload logs even if tests fail
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-logs
+        path: test_logs/
+
+    - name: Report test status
+      if: always()
+      run: |
+        if [ ${{ job.status }} == 'success' ]; then
+          echo "✅ All tests passed!"
+        else
+          echo "❌ Some tests failed. Check the logs for details."
+        fi
